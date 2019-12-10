@@ -1,10 +1,33 @@
+let currentplayer ="X"
+let totalturn = "1"
+let gameend = false
+
+function performLogic(buttonId, tileId){
+    $(buttonId).hide();
+    $(tileId).text(currentplayer)
+
+    if (totalturn == 9){
+        $("h2").html("It's a draw")
+        gameend = true
+    }
+    else if (totalturn % 2 == 0){
+        currentplayer = "X"
+        totalturn++
+    }
+    else if (totalturn % 1 ==0 ){
+        currentplayer = "O"
+        totalturn++
+    }
+    else{
+
+    }
+    
+   
+}
 
 
 
-
-
-
-
+if (gameend == false){
 $("#button1").click(function() {
     performLogic("#button1","#tile1");
 });
@@ -40,4 +63,7 @@ $("#button8").click(function() {
 $("#button9").click(function() {
     performLogic("#button9","#tile9");
 });
-
+}
+else{
+    gameend
+}
