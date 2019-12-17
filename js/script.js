@@ -1,7 +1,18 @@
 let currentplayer ="X"
 let totalturn = "1"
 let gameend = false
-
+function Winner(tileId1, tileId2, tileId3){
+    let tile1 = $(tileId1).val();
+    let tile2 = $(tileId2).val();
+    let tile3 = $(tileId3).val();
+    }
+    if ((tile1 == tile2) && (tile2 == tile3) && (title3 == currentplayer)){
+    return true;
+    }
+    else {
+    return false;
+    }
+}
 function performLogic(buttonId, tileId){
     $(buttonId).hide();
     $(tileId).text(currentplayer)
@@ -9,6 +20,7 @@ function performLogic(buttonId, tileId){
     if (totalturn == 9){
         $("h2").html("It's a draw")
         gameend = true
+        
     }
     else if (totalturn % 2 == 0){
         currentplayer = "X"
